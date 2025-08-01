@@ -1,8 +1,8 @@
 
 resource "azurerm_container_app_environment" "containerappsenv" {
-  name                       = "${var.container_appsenv_name}${var.env}"
-  location                   = azurerm_resource_group.rg.location
-  resource_group_name        = azurerm_resource_group.rg.name
+  name                = "${var.container_appsenv_name}${var.env}"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
 }
 
 resource "azurerm_container_app" "containrapps" {

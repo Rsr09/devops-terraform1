@@ -8,12 +8,12 @@ resource "azurerm_public_ip" "app_gateway_pip" {
 }
 # Create the Application Gateway
 resource "azurerm_application_gateway" "app_gateway" {
-  name                = "${var.app_gateway_name}"
+  name                = var.app_gateway_name
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku {
-    name     = "${var.app_gateway_sku_name}"
-    tier     = "${var.app_gateway_sku_tier}"
+    name     = var.app_gateway_sku_name
+    tier     = var.app_gateway_sku_tier
     capacity = 2
   }
   gateway_ip_configuration {
@@ -28,7 +28,7 @@ resource "azurerm_application_gateway" "app_gateway" {
     name                 = "my-frontend-ip-configuration"
     public_ip_address_id = azurerm_public_ip.app_gateway_pip.id
   }
-firewall_policy_id = azurerm_web_application_firewall_policy.waf.id
+  firewall_policy_id = azurerm_web_application_firewall_policy.waf.id
 
   backend_address_pool {
     name = "my-backend-address-pool"
@@ -52,6 +52,6 @@ firewall_policy_id = azurerm_web_application_firewall_policy.waf.id
     http_listener_name         = "my-http-listener"
     backend_address_pool_name  = "my-backend-address-pool"
     backend_http_settings_name = "my-backend-http-settings"
-    priority                   = 100  
+    priority                   = 100
   }
 }

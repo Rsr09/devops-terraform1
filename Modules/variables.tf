@@ -1,27 +1,27 @@
 #Environment
-variable "env"{
-    description = "Environment value"
-    type=string
+variable "env" {
+  description = "Environment value"
+  type        = string
 }
 
 #Resource group
-variable "rg_location"{
-default = "Central India"
-type=string
+variable "rg_location" {
+  default = "Central India"
+  type    = string
 }
 variable "rg_name" {
   description = "The name of the resource group"
-  type=string
+  type        = string
 }
 
 #Virtual Network(V-net) and subnet
 variable "virtual_network_name" {
- description = "The name of the virtual network" 
- type=string
+  description = "The name of the virtual network"
+  type        = string
 }
 variable "subnet_name" {
- description = "The name of the subnet" 
- type=string
+  description = "The name of the subnet"
+  type        = string
 }
 
 #For_each function 
@@ -70,26 +70,26 @@ variable "container_name" {
 variable "container_access_type" {
   description = "The access level of the storage container"
   type        = string
-  
+
 }
 
 
 #============================================= > Application Gateway <=======================================
 variable "app_gateway_pip" {
   description = "The name of Frontend(Public) IP of Application Gateway"
-  type = string
+  type        = string
 }
 variable "app_gateway_name" {
   description = "The name of the Application Gateway"
-  type = string
+  type        = string
 }
 variable "app_gateway_sku_name" {
   description = "The SKU name of the application Gateway"
-  type = string
+  type        = string
 }
 variable "app_gateway_sku_tier" {
   description = "The SKU tier of the application Gateway"
-  type = string
+  type        = string
 }
 
 #============================================= > WAF <======================================
@@ -107,46 +107,46 @@ variable "blocked_ip" {
 variable "waf_mode" {
   description = "WAF mode - either 'Detection' or 'Prevention'"
   type        = string
- 
+
 }
 
 variable "data_disk_replication_type" {
- description = "Define whether Standard_LRS,ZRS,GRS...."
- type = string
+  description = "Define whether Standard_LRS,ZRS,GRS...."
+  type        = string
 }
 variable "data_disk_size" {
   description = "Deine the size of data disk ikn GB"
-  type = number
+  type        = number
 }
 variable "datadisk_name" {
   description = "The name of the Data disk"
-  type = string
+  type        = string
 }
 
 #containerapps
-variable "container_appsenv_name"{
-  description ="The name of the container apps environment"
-  type = string
+variable "container_appsenv_name" {
+  description = "The name of the container apps environment"
+  type        = string
 }
-variable "container_apps_name"{
-  description ="The name of the container apps"
-  type = string
+variable "container_apps_name" {
+  description = "The name of the container apps"
+  type        = string
 }
-variable "containerappscpu"{
-  description ="CPU allocated to the container app"
-  type = number
+variable "containerappscpu" {
+  description = "CPU allocated to the container app"
+  type        = number
 }
-variable "containerappsmemory"{
-  description ="Memory allocated to the container app"
-  type = string
+variable "containerappsmemory" {
+  description = "Memory allocated to the container app"
+  type        = string
 }
 
 ############_--------------------
-variable "acrname"{
+variable "acrname" {
   description = "Provide the name of Azure container azurerm_container_registry"
-  type = string
+  type        = string
 }
-variable "acr_tier"{
-  description ="Provide tier of the acr"
-  type = string
+variable "acr_tier" {
+  description = "Provide tier of the acr"
+  type        = string
 }
