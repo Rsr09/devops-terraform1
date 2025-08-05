@@ -2,11 +2,11 @@ module "infra" {
   source = "./Modules"
 
   #================================== > Common Resources < ==========================================
-  env                  = "dev"
+  env                  = "prod"
   rg_location          = "Central India"
-  rg_name              = "Vik-rg"
-  virtual_network_name = "vik-vnet"
-  subnet_name          = "vik-subnet"
+  rg_name              = "enterprise-rg"
+  virtual_network_name = "vnet"
+  subnet_name          = "app-sunet"
 
 
   #==================================== > Virtual Machine < =========================================
