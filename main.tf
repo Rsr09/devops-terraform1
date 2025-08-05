@@ -6,7 +6,8 @@ module "infra" {
   rg_location          = "Central India"
   rg_name              = "enterprise-rg"
   virtual_network_name = "vnet"
-  subnet_name          = "app-sunet"
+  subnet_name          = "app-subnet"
+  subnet_namedb        = "db-subnet
 
 
   #==================================== > Virtual Machine < =========================================
